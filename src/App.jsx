@@ -10,17 +10,17 @@ import {image4} from '/src/assets/4.png';
 import {image5} from '/src/assets/5.png';
 import {image6} from '/src/assets/6.png';
 import {image7} from '/src/assets/7.png';
-import {isha8} from '/src/assets/8.jpg';
-import {isha9} from '/src/assets/9.jpg';
-import {isha10} from '/src/assets/10.jpg';
-import {isha24} from '/src/assets/24.jpg';
-import {isha20} from '/src/assets/20.jpg';
-import {isha29} from '/src/assets/29.jpg';
-import {isha30} from '/src/assets/30.jpg';
-import {isha1} from '/src/assets/1.jpg';
-import {isha5} from '/src/assets/5.jpg';
-import {isha6} from '/src/assets/6.jpg';
-import {isha16} from '/src/assets/16.jpg';
+import {isha8} from '/src/assets/isha-8.jpg';
+import {isha9} from '/src/assets/isha-9.jpg';
+import {isha10} from '/src/assets/isha-10.jpg';
+import {isha24} from '/src/assets/isha-24.jpg';
+import {isha20} from '/src/assets/isha-20.jpg';
+import {isha29} from '/src/assets/isha-29.jpg';
+import {isha30} from '/src/assets/isha-30.jpg';
+import {isha1} from '/src/assets/isha-1.jpg';
+import {isha5} from '/src/assets/isha-5.jpg';
+import {isha6} from '/src/assets/isha-6.jpg';
+import {isha16} from '/src/assets/isha-16.jpg';
 
 
 
