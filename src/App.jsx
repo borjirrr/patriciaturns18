@@ -21,6 +21,7 @@ import isha1 from '/src/assets/isha-1.jpg';
 import isha5 from '/src/assets/isha-5.jpg';
 import isha6 from '/src/assets/isha-6.jpg';
 import isha16 from '/src/assets/isha-16.jpg';
+import isha12 from '/src/assets/isha-12.jpg';
 
 
 
@@ -345,7 +346,7 @@ function App() {
           <h2 className='fleur-de-leah-regular'>Gallery</h2>
           <div className='landscape-gallery-container gallery-container transition' tabindex="0" ref={galleryRef}>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-12.jpg'></img>
+            <img src={isha12}></img>
           </div>
           <div className='landscape-gallery-item'>
             <img src={isha8}></img>
