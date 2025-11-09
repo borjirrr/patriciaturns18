@@ -1,0 +1,1329 @@
+/* * ========================================
+ * ENVELOPE
+ * ========================================
+ */
+
+
+
+
+
+
+.envelope-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0e8e0; /* A soft, paper-like color */
+  cursor: pointer;
+  
+  /* Fade-out animation */
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.envelope-container.fading-out {
+  opacity: 0;
+}
+
+.envelope-wrapper {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.envelope-container:hover .envelope-wrapper {
+  transform: translateY(-10px); /* Lifts the envelope on hover */
+}
+
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e6c5ac; /* A light tan/kraft color */
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: absolute;
+}
+
+.envelope-phrase {
+  font-size: 2.5rem;
+  color: #b8860b;
+  position: relative;
+  top: 50%;
+  font-family: "Fleur De Leah", cursive;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  /* This creates the triangle flap */
+  border-top: 100px solid #d2b48c; /* Darker tan */
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  /* Make sure it folds from the top edge */
+  transform-origin: top;
+  z-index: 3;
+  transition: transform 0.4s ease;
+}
+
+.envelope-container:hover .envelope-flap {
+  transform: rotateX(10deg); /* Lifts the flap slightly on hover */
+}
+
+.envelope-letter {
+  position: absolute;
+  top: 10px; /* Peeking out from the top */
+  left: 5%;
+  width: 90%;
+  height: 180px;
+  background-color: #fcf9f3; /* Creamy letter color */
+  border-radius: 3px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 1.8rem;
+  color: #555;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+
+/* --- Animation for when it's clicked --- */
+.envelope-container.fading-out .envelope-letter {
+  transform: translateY(-50px); /* Lifts the letter out */
+  opacity: 0;
+}
+
+.envelope-container.fading-out .envelope-wrapper {
+  transform: scale(0.9); /* Shrinks the envelope */
+}
+
+
+/* * ========================================
+ * MAIN 
+ * ========================================
+ */
+
+/* Basic resets */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; /* Fallback color */
+}
+
+
+/* * 1. The Stacked Section Styling
+ * This class applies to ALL sections
+ */
+.invitation-section {
+  /* Sizing and Layout */
+  min-height: 100vh; 
+  display: flex;
+  box-sizing: border-box;
+  position: relative; 
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  /* This dark overlay ensures text is always readable */
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
+
+}
+
+
+#section-opening {
+  background-image: url('/src/assets/isha-25.jpg');
+  max-height: 100vh;
+}
+
+.hero-container {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.hero-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 10rem;
+  padding-top: 3rem;
+}
+
+.hero-name h1{
+  color: #ffcff3;
+  font-size: 4rem;
+  padding: 0;
+  margin: 0;
+  text-shadow: 2px 2px 0px #C48FB0,  
+    6px 3px 2px rgba(0, 0, 0, 0.9);
+}
+
+.hero-name h1::first-letter{
+  font-family: "Fleur De Leah", cursive;
+  font-size: 1.8em;
+  margin-right: 0.5rem;
+  
+}
+
+.hero-name h3{
+  color: white;
+  font-family: Times New Roman;
+  font-size: 2rem;
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  margin-top: -1.5rem;
+   text-shadow: 
+    4px 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+.hero-name .event-text{
+  line-height: 1.5;
+ 
+}
+
+.hero-name .event-number{
+  font-size: 3em;
+  line-height: 1;
+}
+
+.hero-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 10rem;
+  padding-bottom: 3rem;
+  font-family: Times New Roman;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 30px 40px; 
+  border-radius: 100px / 100px;
+  text-align: center;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+
+  background-image: radial-gradient(
+    circle at center, /* Starts from the center, forms a circle */
+    rgba(255, 255, 255, 0.8) 0%,   /* White, 90% opaque at the center */
+    rgba(255, 255, 255, 0.1) 70%,  /* White, 60% opaque further out */
+    rgba(255, 255, 255, 0) 100%  /* White, 40% opaque at the edges */
+  );
+}
+
+.hero-info p{
+  color: black;
+  text-align: center;
+}
+
+.hero-info .ascott{
+  color: #b27409;
+}
+
+#section-invite {
+  background-image: url('/src/assets/bg1.jpg');
+  align-items: center;
+  justify-content: center;
+}
+
+.invitation-card {
+  background-color: #fffaf0;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  border-radius: 50% / 10%;
+  width: clamp(300px, 80vw, 500px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+
+.invitation-phrase {
+  font-size: 4rem;
+  color: #b8860b;
+  margin-bottom: 0.5rem;
+}
+
+.ornament {
+  width: 80px;
+  height: 2px;
+  background-color: #b8860b;
+  margin: 0.5rem auto 1.5rem auto;
+  position: relative;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #b8860b;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.ornament::before {
+  left: -10px;
+}
+.ornament::after {
+  right: -10px;
+}
+
+.debutante-name {
+  font-size: 3.5rem;
+  color: #db7093;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  text-shadow: none;
+}
+
+.calendar-widget {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Times New Roman;
+}
+
+.month-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.calendar-widget table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-widget th,
+.calendar-widget td {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.calendar-widget th {
+  font-weight: normal;
+  color: #888;
+}
+
+.calendar-widget td.highlight-date-wrapper {
+  padding: 0.2rem;
+}
+
+/* 1. The Number Span */
+.calendar-widget span.highlight-date {
+  font-weight: bold;
+  
+  /* --- KEY CHANGE --- */
+  /* The number is now pink, to match the border */
+  color: #db7093; 
+  
+  position: relative;
+  
+  /* Keep these styles to center the number */
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Make sure the number is on top */
+  z-index: 1;
+}
+
+/* 2. Common styles for both heart lobes */
+.calendar-widget span.highlight-date::before,
+.calendar-widget span.highlight-date::after {
+  content: "";
+  position: absolute;
+  
+  /* We're building a 15x24 box to rotate */
+  width: 15px; 
+  height: 24px;
+  
+  /* --- KEY CHANGE --- */
+  /* Remove background, add border */
+  /* background: #db7093; <-- REMOVED */
+  border-color: #db7093;
+  border-style: solid;
+  border-width: 2px; /* Adjust thickness here */
+  
+  /* Rounded top corners */
+  border-radius: 15px 15px 0 0;
+  
+  /* Send lobes behind the number */
+  z-index: 0; 
+  
+  /* Positioning/Rotation origin */
+  top: 4px;
+}
+
+/* 3. The LEFT lobe */
+.calendar-widget span.highlight-date::before {
+  /* Hide the inner-right and bottom borders */
+  border-right-width: 0;
+  border-bottom-width: 0;
+  
+  /* Position & rotate */
+  left: 15px; 
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+/* 4. The RIGHT lobe */
+.calendar-widget span.highlight-date::after {
+  /* Hide the inner-left and bottom borders */
+  border-left-width: 0;
+  border-bottom-width: 0;
+  
+  /* Position & rotate */
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.music-controls {
+  position: fixed; /* Fix it to a spot on the screen */
+  bottom: 20px;    /* 20px from the bottom */
+  right: 20px;     /* 20px from the right */
+  z-index: 1000;   /* Make sure it's on top of everything */
+}
+
+.music-button {
+  width: 50px;       /* Fixed width */
+  height: 50px;      /* Fixed height */
+  border-radius: 50%; /* Makes it a perfect circle */
+  
+  background-color: #db7093; /* Your pink color */
+  color: white;              /* White icon color */
+  border: none;              /* Remove default button border */
+  
+  display: flex;             /* Use flexbox to center the icon */
+  justify-content: center;   /* Center horizontally */
+  align-items: center;       /* Center vertically */
+  
+  font-size: 20px;           /* Size of the icon */
+  cursor: pointer;           /* Indicate it's clickable */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.music-button:hover {
+  background-color: #c06080; /* Slightly darker pink on hover */
+}
+
+.date-time-info {
+  font-family: Times New Roman;
+  font-size: 1.1rem;
+  color: #b8860b;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+
+#section-about {
+  background-image: url('/src/assets/isha-3.jpg');
+  justify-content: center;
+  flex-direction: column;
+}
+
+.meetDebutant {
+  text-align: center;
+  margin: 0 auto;
+  
+}
+
+.meetDebutant h1{
+  color: #fdcdf1;
+  font-size: 4rem;
+  padding-bottom: 2rem;
+}
+
+.meetDebutant p{
+  color: white;
+  font-family: Times New Roman;
+  max-width: 600px;
+}
+
+#section-venue {
+  background-image: url('/src/assets/bg1.jpg');
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-card {
+  background-color: #fffaf0;
+  padding: 2rem 2rem;
+  border-radius: 2rem;
+  width: clamp(300px, 80vw, 500px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #333;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.venue-card h2{
+ 
+  font-size: 5rem;
+  color: #b8860b;
+  margin-bottom: 0.5rem;
+}
+
+.venue-card h1{
+  font-size: 2.5rem;
+  color: #674222;
+}
+
+.venue-card p{
+  padding: 0;
+  padding-top: 1rem;
+  font-family: Times New Roman;
+}
+
+.venue-card iframe{
+  width: 100%;
+  height: 500px;
+  padding: 0;
+}
+
+#section-roses {
+  background-image: url('/src/assets/isha-23.jpg');
+}
+
+#section-roses::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(141, 41, 99, 0.70), transparent);
+  border-radius: 0.5rem;
+  z-inde: 1;
+}
+
+
+.roses {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  padding: 1rem;
+  
+}
+
+.roses h1 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.roses-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+#section-treasures {
+  background-image: url('/src/assets/isha-32.jpg');
+}
+
+#section-treasures::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(to left, rgba(141, 41, 99, 0.70), transparent);
+  border-radius: 0.5rem;
+  z-inde: 1;
+}
+
+.treasures {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 70%;
+  padding: 1rem;
+}
+
+.treasures h1 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+   display: flex;
+  align-items: flex-start;
+}
+
+
+.treasures-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+#section-bills{
+  background-image: url('/src/assets/isha-35.jpg')
+}
+
+#section-bills::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(141, 41, 99, 0.70), transparent);
+  border-radius: 0.5rem;
+  z-inde: 1;
+}
+
+.bills {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  padding: 1rem;
+}
+
+.bills h1 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.bills-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.eighteen {
+  font-size: 2em;
+  margin-right: 0.5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 0.2;
+      
+}
+
+.et-roses {
+  text-shadow: 
+    0 0 5px #fff,          
+    0 0 10px #fff,         
+    0 0 20px #cc0202,      
+    0 0 30px #fc0a0a;  
+}
+
+.et-treasures {
+  text-shadow: 
+    0 0 5px #fff,          
+    0 0 10px #fff,         
+    0 0 20px #fce40a,      
+    0 0 30px #fce40a;  
+}
+
+.et-bills {
+  text-shadow: 
+    0 0 5px #fff,          
+    0 0 10px #fff,         
+    0 0 20px #0afc0e,      
+    0 0 30px #0afc0e;  
+}
+
+.et-specials{
+  line-height:
+}
+
+
+#section-dresscode {
+  background-image: url('/src/assets/bg2.jpg');
+  align-items: center;
+  justify-content: center;
+}
+
+.dresscode-card {
+  background-color: #fffaf0;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 2rem;
+  width: clamp(300px, 80vw, 500px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+.dresscode-card h2{
+
+  font-size: 5rem;
+  color: #b8860b;
+  margin-bottom: 0.5rem;
+}
+
+.dresscode-card h1{
+  font-size: 2.5rem;
+  color: #674222;
+}
+
+.dresscode-card p{
+  padding: 0;
+  padding-top: 1rem;
+  font-family: Times New Roman;
+}
+
+.colorCircle {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.2rem;
+}
+
+.color1 {
+  background-color: #000000;
+}
+
+.color2 {
+  background-color: #142247;
+}
+
+.color3 {
+  background-color: #490037;
+}
+
+.color4 {
+  background-color: #4c0e01;
+}
+
+.color5 {
+  background-color: #113108;
+}
+
+.men-outfits {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  font-size: 0;
+}
+
+.men-outifts img{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.women-outfits {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  font-size: 0;
+}
+
+.women-outifts img{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+#section-gift {
+  background-image: url('/src/assets/isha-4.jpg')
+}
+
+
+.gift-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 70%;
+}
+
+
+.gift-registry {
+  text-align: center;
+  position: relative;
+}
+
+.gift-registry button{
+  background-color: #fdcdf1;
+  border: 0;
+  margin-top: 1rem;
+  width: 30%;
+  height: 10%;
+  font-style: Times New Roman;
+}
+
+
+
+
+.gift-registry a:link {
+  color: #ffcff3;
+  font-style: Times New Roman;
+  text-decoration: none;
+}
+
+.gift-registry h1{
+  color: #fdcdf1;
+  font-size: 4rem;
+}
+
+.gift-registry p{
+  color: white;
+  font-family: Times New Roman;
+  padding: 0;
+  margin: 0;
+  max-width: 400px;
+}
+
+#section-reminders{
+  background-image: url('/src/assets/bg2.jpg');
+  align-items: center;
+  justify-content: center;
+}
+
+.reminders-card {
+  background-color: #fffaf0;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: clamp(300px, 80vw, 500px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+.reminders-card h1{
+  font-size: 1.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  color: #674222;
+  font-family: Times New Roman;
+}
+
+.reminders-card h2{
+  font-size: 5rem;
+  color: #b8860b;
+  margin-bottom: 0.5rem;
+}
+
+.reminders-card p{
+  padding: 0;
+  padding-bottom: 1rem;
+  font-family: Times New Roman;
+}
+
+#section-landscape-gallery {
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fffaf0;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0);
+}
+
+.gallery-wrapper {
+  position: relative;
+}
+
+.gallery-wrapper h2{
+ 
+  font-size: 5rem;
+  color: #b8860b;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5rem;
+}
+
+.gallery-nav-btn {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-color: rgba(255,255,255, 0);
+  color: white;
+  border: none;
+  border-radius: 50%;
+
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.2s;
+}
+
+
+.gallery-nav-btn:hover,
+.gallery-nav-btn:focus {
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+}
+
+.prev-btn {
+  left: 10px; /* 10px from the left */
+}
+
+.next-btn {
+  right: 10px; /* 10px from the right */
+}
+
+.landscape-gallery-container{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.landscape-gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.landscape-gallery-item {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+
+
+
+
+.landscape-gallery-item img {
+  width: 100%;
+  max-height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+#section-portrait-gallery{
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fffaf0;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0);
+}
+
+.portrait-gallery-container{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+.portrait-gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.portrait-gallery-item {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.portrait-gallery-item img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+/* TRANSITION EFFECT */
+
+.transition {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.2s;
+}
+
+.invitation-section.is-visible .transition {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.et-transition {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.2s;
+}
+
+.invitation-section.is-visible .et-transition {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+
+
+/* * 3. Content Box Styling (Unchanged)
+ * The fade-in logic still works perfectly.
+ */
+.content-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  max-width: 600px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+}
+
+.content-box h2 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+.content-box ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+
+.landscape-gallery-container{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.landscape-gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.landscape-gallery-item {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.landscape-gallery-item img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.portrait-gallery-container{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.portrait-gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.portrait-gallery-item {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.portrait-gallery-item img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+  #section-roses::before, #section-bills::before{
+    width: 100%;
+  }
+
+  #section-treasures::before {
+    left: 0;
+    width: 100%;
+  }
+
+
+  .invitation-section{
+    min-height: 50vh;
+  }
+
+  #section-opening{
+    min-height: 110vh;
+  }
+
+  #section-roses, #section-treasures, #section-bills{
+    min-height: 70vh;
+  }
+
+  .hero-name{
+    padding-top: 1.5rem;
+    padding-left: 3rem;
+  }
+
+  .hero-info {
+    padding-bottom: 1.5rem;
+    padding-right: 3rem;
+  }
+
+  .venue-card {
+    padding: 0.5rem 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .venue-card h2{
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .venue-card h1 {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    
+  }
+
+  .venue-card p{
+    font-size: 0.8rem;
+  }
+  .venue-card iframe{
+    padding: 1rem;
+    min-height: 50%;
+  }
+  
+  .meetDebutant{
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .meetDebutant h1{
+    font-size: 2.5rem;
+  }
+
+  .roses {
+    left: 5%;
+  }
+
+  .roses h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .roses-list {
+    font-size: 0.8rem;
+  }
+
+  .treasures {
+    left: 55%;
+  }
+
+  .treasures h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .treasures-list {
+    font-size: 0.8rem;
+  }
+
+  .bills {
+    left: 5%;
+  }
+
+  .bills h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bills-list {
+    font-size: 0.8rem;
+  }
+
+  .dresscode-card, .reminders-card {
+    padding: 0.5rem 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .dresscode-card h2, .reminders-card h2{
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .gallery-wrapper h2{
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  .dresscode-card h1, .reminders-card h1 {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dresscode-card p, .reminders-card p{
+    font-size: 0.8rem;
+    padding: 0;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .colorCircle {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0.2rem;
+  }
+
+  .gift-container {
+  left: 50%;
+  margin-right: 1.5rem;
+  }
+
+  .gift-registry h1{
+    color: #fdcdf1;
+    font-size: 2.5rem;
+  }
+
+  .gift-registry button{
+    width: 60%;
+    height: 5%;
+  }
+
+.gift-registry p{
+  color: white;
+  font-family: Times New Roman;
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+  max-width: 400px;
+}
+
+.men-outfits, .women-outfits {
+  height: 7rem;
+}
+
+  .invitation-phrase {
+    font-size: 3rem;
+  }
+  .debutante-name {
+    font-size: 2.5rem;
+  }
+  .invitation-card {
+    padding: 2rem 1rem;
+  }
+  .calendar-widget {
+    padding: 0.8rem;
+  }
+  .month-name {
+    font-size: 0.8rem;
+  }
+  .calendar-widget th,
+  .calendar-widget td {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+  }
+  .date-time-info {
+    font-size: 0.8rem;
+  }
+
+  /* Envelope media query */
+  .envelope-wrapper {
+    width: 250px;
+    height: 167px;
+  }
+  .envelope-flap {
+    border-top: 83px solid #d2b48c;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+  }
+}
+
+
