@@ -338,7 +338,7 @@ function App() {
           <h1><b>18 SPECIALS</b></h1>
           <p>Pay attention to the flow of the program and be ready when it's your time to be called on stage</p>
           <h1><b>18 ROSES</b></h1>
-          <p>Gentleman participating in the 18 Roses are requested to wear a tuxedo or formal suit</p>
+          <p>Gentlemen participating in the 18 Roses are requested to wear a tuxedo or formal suit</p>
         </div>
       </InvitationSection>
 
