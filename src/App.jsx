@@ -281,6 +281,7 @@ function App() {
               <li>Alexie Tagle</li>
               <li>Ena Barril</li>
               <li>Cherry Salumbides</li>
+              <li>Fernan Salumbides</li>
               <li>Elizabeth Salumbides</li>
               <li>Veronica Salumbides</li></b>
             </ul>
