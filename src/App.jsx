@@ -192,7 +192,7 @@ function App() {
           </div>
 
           <p className="date-time-info"><b>SUNDAY, DECEMBER 7, 2025</b></p>
-          <p className="date-time-info"><b>SIX THIRTY O'CLOCK IN THE EVENING</b></p>
+          <p className="date-time-info"><b>SIX THIRTY IN THE EVENING</b></p>
         </div>
       </InvitationSection>
 
@@ -230,7 +230,7 @@ function App() {
               <li>Jeremiah Salumbides</li>
               <li>Fourth Salumbides</li>
               <li>Third Salumbides</li>
-              <li>Doc. Fernan Salumbides</li>
+              <li>Fernan Salumbides</li>
               <li>Luis Salumbides</li>
               <li>Manuel Salumbides</li>
               <li>Benedict Pascua</li>
