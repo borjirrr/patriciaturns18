@@ -9,7 +9,7 @@ import {image3} from '/src/assets/3.png';
 import {image4} from '/src/assets/4.png';
 import {image5} from '/src/assets/5.png';
 import {image6} from '/src/assets/6.png';
-import {image6} from '/src/assets/7.png';
+import {image7} from '/src/assets/7.png';
 import {isha8} from '/src/assets/8.jpg';
 import {isha9} from '/src/assets/9.jpg';
 import {isha10} from '/src/assets/10.jpg';
