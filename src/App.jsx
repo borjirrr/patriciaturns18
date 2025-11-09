@@ -3,6 +3,25 @@ import { useInView } from 'react-intersection-observer';
 import './App.css'; 
 import musicFile from '/src/assets/song.mp3';
 import { FaMusic, FaPause } from 'react-icons/fa';
+import {image1} from '/src/assets/1.png';
+import {image2} from '/src/assets/2.png';
+import {image3} from '/src/assets/3.png';
+import {image4} from '/src/assets/4.png';
+import {image5} from '/src/assets/5.png';
+import {image6} from '/src/assets/6.png';
+import {image6} from '/src/assets/7.png';
+import {isha8} from '/src/assets/8.jpg';
+import {isha9} from '/src/assets/9.jpg';
+import {isha10} from '/src/assets/10.jpg';
+import {isha24} from '/src/assets/24.jpg';
+import {isha20} from '/src/assets/20.jpg';
+import {isha29} from '/src/assets/29.jpg';
+import {isha30} from '/src/assets/30.jpg';
+import {isha1} from '/src/assets/1.jpg';
+import {isha5} from '/src/assets/5.jpg';
+import {isha6} from '/src/assets/6.jpg';
+import {isha16} from '/src/assets/16.jpg';
+
 
 
 function InvitationSection({ children, id }) { 
@@ -280,16 +299,16 @@ function App() {
           <p><i>Note: Kindly avoid wearing casual wear ( jeans, sneakers, or slippers )</i>
           </p>
           <div className='men-outfits'>
-            <img src='/src/assets/1.png'></img>
-            <img src='/src/assets/2.png'></img>
-            <img src='/src/assets/3.png'></img>
+            <img src={image1}></img>
+            <img src={image2}></img>
+            <img src={image3}></img>
           </div>
              <p><b>Gentlemen:</b> Formal suit or dark long sleeve polo and black pants; tie or suit may complement the color palette</p>
           <div className='women-outfits'>
-            <img src='/src/assets/4.png'></img>
-            <img src='/src/assets/5.png'></img>
-            <img src='/src/assets/6.png'></img>
-            <img src='/src/assets/7.png'></img>
+            <img src={image4}></img>
+            <img src={image5}></img>
+            <img src={image6}></img>
+            <img src={image7}></img>
           </div>
              <p><b>Ladies:</b> Long dress or skirt that match the color palette; Plain or patterned</p>
         </div>
@@ -329,25 +348,25 @@ function App() {
             <img src='/src/assets/isha-12.jpg'></img>
           </div>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-8.jpg'></img>
+            <img src={isha8}></img>
           </div>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-9.jpg'></img>
+            <img src={isha9}></img>
           </div>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-10.jpg'></img>
+            <img src={isha10}></img>
           </div>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-24.jpg'></img>
+            <img src={isha24}></img>
           </div>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-20.jpg'></img>
+            <img src={isha20}></img>
           </div>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-29.jpg'></img>
+            <img src={isha29}></img>
           </div>
           <div className='landscape-gallery-item'>
-            <img src='/src/assets/isha-30.jpg'></img>
+            <img src={isha30}></img>
           </div>
           </div>
             <button class="gallery-nav-btn prev-btn" aria-label="Previous image" onClick={galleryPrev}>‹</button>
@@ -360,16 +379,16 @@ function App() {
         <div className='gallery-wrapper'>
           <div className='portrait-gallery-container transition' tabindex="0" ref={galleryRef2}>
           <div className='portrait-gallery-item'>
-            <img src='/src/assets/isha-1.jpg'></img>
+            <img src={isha1}></img>
           </div>
           <div className='portrait-gallery-item'>
-            <img src='/src/assets/isha-5.jpg'></img>
+            <img src={isha5}></img>
           </div>
           <div className='portrait-gallery-item'>
-            <img src='/src/assets/isha-6.jpg'></img>
+            <img src={isha6}></img>
           </div>
           <div className='portrait-gallery-item'>
-            <img src='/src/assets/isha-16.jpg'></img>
+            <img src={isha16}></img>
           </div>
 
         </div>
