@@ -279,8 +279,8 @@ function App() {
               <li>Elaine Sibal</li>              
               <li>Ria Tagle</li>
               <li>Alexie Tagle</li>
-              <li>Ena Barril</li>
-              <li>Cherry Salumbides</li>
+              <li>Ena Salumbides-Barril</li>
+              <li>Cherie  Morato-Salumbides</li>
               <li>Fernan Salumbides</li>
               <li>Elizabeth Salumbides</li>
               <li>Veronica Salumbides</li></b>
