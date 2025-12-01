@@ -277,6 +277,7 @@ function App() {
               <li>Susan Bautista</li>
               <li>Niña Clara Versoza</li>
               <li>Grace Carpio Pascual</li>
+              <li>Agnes Carpio</li>
               <li>Kathryn Alma Manuntag</li>
               <li>Madeline Asuncion</li>
               <li>Elaine Sibal</li>              
